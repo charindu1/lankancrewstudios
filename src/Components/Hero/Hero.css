@@ -1,0 +1,149 @@
+.hero {
+    width: 100%;
+    height: 92vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 3em;
+    gap: 10em;
+    animation: fadeIn 2s ease;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+}
+
+.hero-left h1 {
+    font-size: 3.7rem;
+    max-width: 8em;
+    line-height: 1.1em;
+}
+
+.hero-left span {
+    -webkit-text-stroke: 0.5px #fff;
+    color: #000;
+}
+
+.hero-left p {
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    max-width: 30em;
+}
+
+.hero-left .btn1 {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+} 
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right img {
+    width: 19em;
+    border-radius: 2em;
+    animation:  4s infinite;
+    animation: glowShadow 2s infinite ease-in-out;
+}
+
+@keyframes glowShadow {
+  0% {
+    box-shadow: 0px 0px 10px 1px #fff;
+  }
+  50% {
+    box-shadow: 0px 0px 15px 7px #fff;
+  }
+  100% {
+    box-shadow: 0px 0px 10px 1px #fff;
+  }
+}
+
+
+.cinama-tape-boundary {
+  width: 100%;
+  height: 8em; /* Adjust the vertical height */
+  background-image: url('../../assets/cinama_tape.png');
+  background-repeat: repeat-x;
+  background-size: 150px auto; /* Width of each image instance (smaller = more repeats) */
+  background-position: center;
+  transition: background-position-x 0.1s linear;
+  animation: fadeIn 2s ease;
+}
+
+
+
+/* media queries */
+@media (max-width: 1100px) {
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+  .hero-right img {
+    width: 16em;
+  }
+  .hero-left p {
+    font-size: 1rem;
+  }
+  .hero {
+    gap: 2em;
+    height: 90vh;
+    padding-top: 2em;
+  }
+}
+
+@media (max-width: 670px) {
+  .hero {
+    flex-wrap: wrap;
+    gap: 0;
+    height: 95vh;
+    padding-top: 2em;
+  }
+  .hero-left {
+    align-items: center;
+  }
+  .hero-right img {
+    width: 16em;
+  }
+  .hero-left h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  .hero-left p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .cinama-tape-boundary {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    flex-wrap: wrap;
+    gap: 0em;
+    height: 90vh;
+    padding-top: 3em;
+  }
+  .hero-left {
+    align-items: center;
+  }
+  .hero-right img {
+    width: 14em;
+  }
+  .hero-left h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .hero-left p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .cinama-tape-boundary {
+    display: none;
+  }
+}

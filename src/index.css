@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.container {
+  padding: 0 7%;
+}
+
+.btn1 {
+  border: none;
+  padding: 0.7em 0.9em;
+  border-radius: 6em;
+  color: #000;
+  background: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn1:hover {
+  background: #c2c2c2;
+}
+
+h2{
+    font-size: 2.7rem;
+    text-align: center;
+    animation: scaleIn 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+
+.prev-button,
+.next-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: #bcbcbc;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes translateIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+/* media queries */
+@media (max-width: 1100px) {
+  .btn1 {
+    padding: 0.6em 0.8em;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 450px) {
+  h2{
+    font-size: 1.9rem;
+  }
+}
