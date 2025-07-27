@@ -83,25 +83,26 @@ const Videos = () => {
   const cardWidthPercent = 100 / cardsVisible;
   const maxIndex = thumbnails.length - cardsVisible;
 
-  const handlePrev = () => {
-    if (tx < 0) {
-      const newTx = tx + cardWidthPercent;
-      setTx(newTx);
-      slider.current.style.transform = `translateX(${newTx}%)`;
-    }
-  };
+    const handlePrev = () => {
+    if (!slider.current) return;
+        if (tx < 0) {
+            const newTx = tx + cardWidthPercent;
+            setTx(newTx);
+            slider.current.style.transform = `translateX(${newTx}%)`;
+        }
+    };
 
-  const handleNext = () => {
+    const handleNext = () => {
+    if (!slider.current) return;
     const newTx = tx - cardWidthPercent;
     if (Math.abs(newTx / cardWidthPercent) <= maxIndex) {
         setTx(newTx);
         slider.current.style.transform = `translateX(${newTx}%)`;
-    }
-    else {
+    } else {
         setTx(0);
         slider.current.style.transform = `translateX(0%)`;
     }
-  };
+    };
 
   // Inside the component
     useEffect(() => {
@@ -110,7 +111,7 @@ const Videos = () => {
     }, 4000); // every 4 seconds
 
     return () => clearInterval(timer); // cleanup on unmount
-    }, [tx]); // re-run only when tx changes
+    }, [tx, cardsVisible]); // re-run only when tx changes
 
 
   return (

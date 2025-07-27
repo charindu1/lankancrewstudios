@@ -77,7 +77,6 @@ h4 {
 }
 
 .carousel-card {
-  flex: 0 0 calc(100% / 3); /* Always 3 cards visible */
   padding: 1em;
   position: relative;
   transition: transform 0.2s ease;

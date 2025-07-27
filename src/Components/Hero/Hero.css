@@ -100,7 +100,7 @@
   .hero {
     flex-wrap: wrap;
     gap: 0;
-    height: 95vh;
+    height: 85vh;
     padding-top: 2em;
   }
   .hero-left {
@@ -126,7 +126,7 @@
   .hero {
     flex-wrap: wrap;
     gap: 0em;
-    height: 90vh;
+    height: 85vh;
     padding-top: 3em;
   }
   .hero-left {
