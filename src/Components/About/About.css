@@ -54,7 +54,7 @@
 /* media queries */
 @media (max-width: 450px) {
     .about {
-        padding-top: 4em;
+        padding-top: 0;
     }
     .about .about-content {
         gap: 2em;

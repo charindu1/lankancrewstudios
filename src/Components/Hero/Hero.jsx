@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="hero-left">
           <h1>Wellcome To <span>Lankan Crew</span></h1>
           <p>We create entertaining and informative content about thriller, horror, mystery, sci-fi, and comedy in Sri Lanka</p>
-          <Link to='about' smooth={true} offset={-50} duration={500}><button className='btn1'>Explore More <IoMdArrowRoundForward/></button></Link>
+          <Link to='about' smooth={true} offset={-100} duration={500}><button className='btn1'>Explore More <IoMdArrowRoundForward/></button></Link>
         </div>
         <div className="hero-right">
           <img src={big_logo} alt="logo" />

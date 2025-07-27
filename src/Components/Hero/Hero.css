@@ -108,6 +108,7 @@
   }
   .hero-right img {
     width: 16em;
+    margin-bottom: 2.5em;
   }
   .hero-left h1 {
     font-size: 2.8rem;
@@ -125,7 +126,7 @@
 @media (max-width: 360px) {
   .hero {
     flex-wrap: wrap;
-    gap: 0em;
+    gap: 0;
     height: 90vh;
     padding-top: 3em;
   }
@@ -134,6 +135,7 @@
   }
   .hero-right img {
     width: 14em;
+    margin-bottom: 5em;
   }
   .hero-left h1 {
     font-size: 2.5rem;
