@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 import { Link } from 'react-scroll';
@@ -22,8 +22,24 @@ const Navbar = () => {
         mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
   }
 
+  // close the navbar after clicked outside
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+        if (mobileMenu && navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setMobileMenu(false);
+        }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenu]);
+
   return (
-    <div className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
+    <div ref={navbarRef} className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-logo">
             <Link to='hero' smooth={true} offset={-100} duration={500}><img src={logo} alt="logo" /></Link>
         </div>
