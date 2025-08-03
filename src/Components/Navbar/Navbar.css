@@ -81,7 +81,6 @@
     transition: right 0.4s ease-in-out;
     z-index: 1050;
     padding-left: 2em;
-    border-left: 1px solid #fff;
   }
 
   .navbar-menu {
@@ -128,3 +127,13 @@
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 9;
+  pointer-events: all;
+}
