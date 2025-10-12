@@ -107,3 +107,11 @@
 .swiper-pagination-bullet-active {
   opacity: 1;
 }
+
+
+
+@media (max-width: 450px) {
+  .carousel{
+    gap: 0em;
+  }
+}

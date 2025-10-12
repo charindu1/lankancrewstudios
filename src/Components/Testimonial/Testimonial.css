@@ -96,4 +96,7 @@
   .testimonial-button {
     margin-top: 0;
   }
+  .carousel-wrapper {
+    gap: 0em;
+  }
 }
