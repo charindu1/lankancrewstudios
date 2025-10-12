@@ -36,7 +36,7 @@
 .navbar-menu {
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #fff;
     border-radius: 6em;
     padding: 1.1em 1em;

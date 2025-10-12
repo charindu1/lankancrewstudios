@@ -12,6 +12,7 @@
   overflow: hidden;
   align-items: center;
   margin: 2em 0 1em 0;
+  gap: 1em;
   animation: scaleIn 5s ease;
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
@@ -29,8 +30,6 @@
 }
 
 .carousel-card {
-  padding: 1em;
-  position: relative;
   transition: transform 0.2s ease;
 }
 

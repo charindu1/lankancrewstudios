@@ -1,9 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Testimonial.css';
 import { IoMdContact } from "react-icons/io";
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Testimonial = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   const testimonials = [
     {
       name: "Gayan Hemantha",
@@ -32,66 +40,50 @@ const Testimonial = () => {
     },
   ];
 
-  const slider = useRef();
-  const [tx, setTx] = useState(0);
-  const [cardsVisible, setCardsVisible] = useState(3);
-
-  const updateCardsVisible = () => {
-    if (window.innerWidth <= 600) setCardsVisible(1);
-    else if (window.innerWidth <= 992) setCardsVisible(2);
-    else setCardsVisible(3);
-  };
-
   useEffect(() => {
-    updateCardsVisible();
-    window.addEventListener('resize', updateCardsVisible);
-    return () => window.removeEventListener('resize', updateCardsVisible);
+    // Force update navigation after refs are assigned
   }, []);
-
-  const cardWidthPercent = 100 / cardsVisible;
-  const maxIndex = testimonials.length - cardsVisible;
-
-  const handlePrev = () => {
-    if (tx < 0) {
-      const newTx = tx + cardWidthPercent;
-      setTx(newTx);
-      slider.current.style.transform = `translateX(${newTx}%)`;
-    }
-  };
-
-  const handleNext = () => {
-    const newTx = tx - cardWidthPercent;
-    if (Math.abs(newTx / cardWidthPercent) <= maxIndex) {
-      setTx(newTx);
-      slider.current.style.transform = `translateX(${newTx}%)`;
-    } else {
-      setTx(0);
-      slider.current.style.transform = `translateX(0%)`;
-    }
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [tx, cardsVisible]);
 
   return (
     <div className='testimonial container'>
       <h2>Testimonials</h2>
       <div className="carousel-wrapper">
-        <button className='prev-button' onClick={handlePrev}>
-          <FaChevronLeft />
-        </button>
-        <div className="testimonial-carousel">
-          <div className="carousel-track" ref={slider}>
-            {testimonials.map((testimonial, index) => (
-              <div
-                className="carousel-card testimonial-card"
-                key={index}
-                style={{ flex: `0 0 ${cardWidthPercent}%` }}
-              >
+
+        <button ref={prevRef} className="prev-button"><FaChevronLeft /></button>
+
+        <Swiper
+          modules={[Navigation, Autoplay, Pagination]}
+          spaceBetween={30}
+          slidesPerView={3}
+          loop={true}
+          speed={800}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current
+          }}
+          onInit={(swiper) => {
+            setTimeout(() => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            });
+          }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="testimonial-swiper"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="carousel-card testimonial-card">
                 <div className="testimonial-content">
                   <IoMdContact className='profile-icon' />
                   <div className="user-name-position">
@@ -104,12 +96,11 @@ const Testimonial = () => {
                   <p className="feedback">"{testimonial.feedback}"</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <button className='next-button' onClick={handleNext}>
-          <FaChevronRight />
-        </button>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <button ref={nextRef} className="next-button"><FaChevronRight /></button>
       </div>
 
       <div className="testimonial-button">
