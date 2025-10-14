@@ -5,36 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/lankancrew.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LankanCrew</title>
-  </head>
-  <body>
 
-    <div id="preloader">
-      <lottie-player
-        id="lottie-logo"
-        src="/animation/preloader.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-        ></lottie-player>
-    </div>
-
-    <div id="root"></div>
-
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- 🔹 Remove preloader after React fully loads -->
-    <script>
-      window.addEventListener("load", () => {
-        const pre = document.getElementById("preloader");
-        if (pre) {
-          setTimeout(() => {
-          pre.classList.add("fade");
-            setTimeout(() => pre.remove(), 1000);
-          }, 2200);
-        }
-      });
-    </script>
+    <!-- Lottie Player Script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <!-- 🔹 Preloader styles -->
     <style>
@@ -76,8 +49,35 @@
       }
     </style>
 
-    <!-- Lottie Player Script -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
 
+    <div id="preloader">
+      <lottie-player
+        id="lottie-logo"
+        src="/animation/preloader.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+        ></lottie-player>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 🔹 Remove preloader after React fully loads -->
+    <script>
+      window.addEventListener("load", () => {
+        const pre = document.getElementById("preloader");
+        if (pre) {
+          setTimeout(() => {
+          pre.classList.add("fade");
+            setTimeout(() => pre.remove(), 1000);
+          }, 2200);
+        }
+      });
+    </script>
   </body>
 </html>
