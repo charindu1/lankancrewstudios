@@ -8,7 +8,7 @@ const Preloader = () => {
     <div className="lottie-container">
       <Lottie 
         animationData={animationData} 
-        loop={true} 
+        loop={false} 
         autoplay={true}
       />
     </div>
