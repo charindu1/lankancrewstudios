@@ -1,9 +1,12 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import animationData from '../../../public/animation/preloader.json';
+import animationData from '../../assets/animation/preloader.json';
 import './Preloader.css'
 
 const Preloader = () => {
+
+  const clonedAnimation = JSON.parse(JSON.stringify(animationData));
+
   return (
     <div className="lottie-container">
       <Lottie 
