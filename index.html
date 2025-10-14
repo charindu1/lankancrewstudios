@@ -7,7 +7,66 @@
     <title>LankanCrew</title>
   </head>
   <body>
+
+    <div id="preloader">
+      <lottie-player
+        src="/animation/preloader.json"
+        background="transparent"
+        speed="1"
+        style="width: 180px; height: 180px;"
+        autoplay
+        ></lottie-player>
+    </div>
+
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 🔹 Remove preloader after React fully loads -->
+    <script>
+      window.addEventListener("load", () => {
+        const pre = document.getElementById("preloader");
+        if (pre) {
+          pre.classList.add("fade");
+          setTimeout(() => pre.remove(), 800);
+        }
+      });
+    </script>
+
+    <!-- 🔹 Preloader styles -->
+    <style>
+      #preloader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #000000, #000000, #2a2a2a, #6f6f6f);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+        z-index: 9999;
+        transition: opacity 0.8s ease;
+      }
+
+      #preloader.fade {
+        opacity: 0;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+
+    <!-- Lottie Player Script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
   </body>
 </html>
