@@ -94,19 +94,7 @@
   opacity: 0.9;
 }
 
-.video-swiper .swiper-pagination {
-  bottom: -15px; /* move dots slightly below the carousel */
-}
 
-.swiper-pagination-bullet {
-  background: #fff; /* white for contrast */
-  opacity: 0.6;
-  transition: 0.3s;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-}
 
 
 
