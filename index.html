@@ -14,6 +14,7 @@
         src="/animation/preloader.json"
         background="transparent"
         speed="1"
+        loop
         autoplay
         ></lottie-player>
     </div>
@@ -29,7 +30,7 @@
         if (pre) {
           setTimeout(() => {
           pre.classList.add("fade");
-            setTimeout(() => pre.remove(), 800);
+            setTimeout(() => pre.remove(), 1000);
           }, 2200);
         }
       });
