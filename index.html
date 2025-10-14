@@ -10,10 +10,10 @@
 
     <div id="preloader">
       <lottie-player
+        id="lottie-logo"
         src="/animation/preloader.json"
         background="transparent"
         speed="1"
-        style="width: 180px; height: 180px;"
         autoplay
         ></lottie-player>
     </div>
@@ -27,8 +27,10 @@
       window.addEventListener("load", () => {
         const pre = document.getElementById("preloader");
         if (pre) {
+          setTimeout(() => {
           pre.classList.add("fade");
-          setTimeout(() => pre.remove(), 800);
+            setTimeout(() => pre.remove(), 800);
+          }, 2200);
         }
       });
     </script>
@@ -61,6 +63,14 @@
         }
         100% {
           background-position: 0% 50%;
+        }
+      }
+
+      /* Smaller screens */
+      @media (max-width: 600px) {
+        #lottie-logo {
+          width: 200vw;
+          max-width: 100em;
         }
       }
     </style>
