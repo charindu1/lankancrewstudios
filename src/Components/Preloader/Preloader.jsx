@@ -5,8 +5,6 @@ import './Preloader.css'
 
 const Preloader = () => {
 
-  const clonedAnimation = JSON.parse(JSON.stringify(animationData));
-
   return (
     <div className="lottie-container">
       <Lottie 
