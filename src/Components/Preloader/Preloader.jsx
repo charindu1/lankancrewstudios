@@ -1,8 +1,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
+import animationData from '../../../public/animation/preloader.json';
 import './Preloader.css'
-
-const animationData = require('../../assets/animation/preloader.json');
 
 const Preloader = () => {
   return (
