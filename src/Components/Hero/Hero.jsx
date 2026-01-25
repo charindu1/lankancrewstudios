@@ -29,7 +29,6 @@ const Hero = () => {
 
   return (
     <>
-      helmet
       <div className='hero container'>
         <div className="hero-left">
           <h1>Wellcome To <span>Lankan Crew</span></h1>
