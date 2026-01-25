@@ -7,17 +7,6 @@ import { Link } from 'react-scroll';
 const Hero = () => {
 
   useEffect(() => {
-    document.title = "Home | Lankan Crew Studios";
-
-    const meta = document.createElement("meta");
-    meta.name = "description";
-    meta.content = "Official website of Lankan Crew Studios";
-
-    document.head.querySelector('meta[name="description"]')?.remove();
-    document.head.appendChild(meta);
-  }, []);
-
-  useEffect(() => {
     const tape = document.querySelector('.cinama-tape-boundary');
     const handleScroll = () => {
       const scroll = window.scrollY;
