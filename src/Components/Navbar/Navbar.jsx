@@ -48,15 +48,15 @@ const Navbar = () => {
             </div>
             <div className={`navbar-menu ${mobileMenu ? 'mobile-active' : ''}`}>
                 <ul>
-                    <li><Link to='hero' smooth={true} offset={-100} duration={500}>Home</Link></li>
-                    <li><Link to='about' smooth={true} offset={-100} duration={500}>About Us</Link></li>
-                    <li><Link to='videos' smooth={true} offset={-100} duration={900}>Videos</Link></li>
-                    <li><Link to='testimonial' smooth={true} offset={-100} duration={700}>Testimonials</Link></li>
+                    <li><Link to='hero' smooth={true} offset={-100} duration={500} onClick={() => setMobileMenu(false)}>Home</Link></li>
+                    <li><Link to='about' smooth={true} offset={-100} duration={500} onClick={() => setMobileMenu(false)}>About Us</Link></li>
+                    <li><Link to='videos' smooth={true} offset={-100} duration={900} onClick={() => setMobileMenu(false)}>Videos</Link></li>
+                    <li><Link to='testimonial' smooth={true} offset={-100} duration={700} onClick={() => setMobileMenu(false)}>Testimonials</Link></li>
                 </ul> 
             </div>
             <div className={`navbar-action ${mobileMenu ? 'mobile-active' : ''}`}>
                 <ul>
-                    <li><Link to='contact' smooth={true} offset={-100} duration={500}>Contact Us</Link></li>
+                    <li><Link to='contact' smooth={true} offset={-100} duration={500} onClick={() => setMobileMenu(false)}>Contact Us</Link></li>
                     <li><button className='btn1' onClick={()=>window.open('https://www.youtube.com/@lankancrewstudios','_blank')}>Subscribe Us</button></li>
                 </ul>
             </div>
