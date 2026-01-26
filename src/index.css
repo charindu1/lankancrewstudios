@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active, li:active, a:active {
+  opacity: 0.8; 
+  transform: scale(0.98); 
 }
 
 body {
