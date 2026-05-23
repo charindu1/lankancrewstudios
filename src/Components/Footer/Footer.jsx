@@ -35,7 +35,7 @@ const Footer = () => {
                 <ul className="contact-info">
                     <li><FaPhone className='phone' color='#03a700ff'/>+94 71 553 1465</li>
                     <li><IoLogoWhatsapp className='whatsapp' color='#05ff61ff'/>+94 71 553 1465</li>
-                    <li><MdEmail className='email'/>lankancrew2003@gmail.com</li>
+                    <li><MdEmail className='email'/>lankancrewstudios@gmail.com</li>
                 </ul>
                 <ul className='social-links'>
                     <li onClick={()=>window.open('https://www.youtube.com/@lankancrewstudios', '_blank')}><FaYoutube className='youtube' color='#ffffffff'/></li>
