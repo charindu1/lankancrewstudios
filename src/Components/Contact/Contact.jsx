@@ -54,7 +54,7 @@ const Contact = () => {
                 <ul>
                     <li onClick={()=>window.open('https://www.youtube.com/@lankancrewstudios', '_blank')}><FaYoutube className='social-icon' color='#FF0000'/> LankanCrewStudios</li>
                     <li onClick={()=>window.open('https://www.facebook.com/share/176K6esK4p/', '_blank')}><FaFacebook className='social-icon' color='#1877F2'/> LankanCrewStudios</li>
-                    <li><MdEmail className='social-icon'/>lankancrew2003@gmail.com</li>
+                    <li><MdEmail className='social-icon'/>lankancrewstudios@gmail.com</li>
                 </ul>
             </div>
             </div>
